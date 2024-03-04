@@ -1,7 +1,9 @@
-package com.yoruProj.storeManagement.model;
+package com.yoruProj.storeManagement.User;
 
 import java.time.LocalDate;
 import java.time.Period;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,6 +33,7 @@ public class User {
     @Column(name = "user_password", length = 120)
     private String userPassword;
 
+    @JsonFormat(pattern = "MM/dd/yyyy")
     @Column(name = "user_birthdate", length = 120, nullable = false)
     private LocalDate userBirthDate;
 
